@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML Lesson</title>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <caption>Registartion:</caption>
+      <div>
+        <label for="email_address">Insert your e-mail:</label>
+        <input type="email" id="email_address" name="email_address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="e.g.: email@gmail.com">
+      </div>
+      <div>
+         <!--il pattern l'ho preso su internet, non so esattamente come funziona, so solo che posso usare tutti i simboli, caratteri e numeri, minimo 8-->
+        <label for="password">Insert your password (min 8 characters):</label>
+        <input type="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="e.g.: 123Ab?(,.">   
+      </div>
+      <div>
+        <label for="first_name">Insert your first name:</label>
+        <input type="text" id="first_name" name="first_name" min="3" max="15" pattern="[A-Za-z]+" placeholder="e.g.: Mario">      
+        <label for="surname">Insert your surname:</label>
+        <input type="text" id="surname" name="surname" min="3" max="15" pattern="[A-Za-z]+" placeholder="e.g.: Rossi">
+      </div>
+      <div>
+        <label for="date_of_birth">Insert your date of birth</label>
+        <input type="date" id="date_of_birth" name="date_of_birth">
+      </div>
+        <label for="telephone_number">Insert your Telephone number</label>
+        <input type="number" id="telephone_number" name="telephone_number" min="10" placeholder="e.g.: 3333333333">
+      <fieldset>
+        <legend>Choose your plan</legend>
+        <div>
+          <input type="radio" name="choose_plane" id="free-plan" value="Free plan">
+          <label for="free-plan">Free plane</label>
+        </div>
+        <div>
+          <input type="radio" name="choose_plane" id="basic_plane" value="Basic plane 5€ at month">
+          <label for="basic_plane">Basic plane 5€ at month</label>
+        </div>
+        <div>
+          <input type="radio" name="choose_plane" id="super_plane" value="Super plane 10€ at month">
+          <label for="super_plane">Super plane 10€ at month</label>
+        </div>
+        <div>
+          <input type="radio" name="choose_plane" id="ultra_plane" value="Ultra plane 15€ at month">
+          <label for="choose_plane">Ultra plane 15€ at month</label>
+        </div>
+        <div>
+          <input type="checkbox" name="choose_plane" id="pro_plane" value="Pro plane">
+          <label for="pro_plane">Pro plane</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Add credit card</legend>
+          <div>
+            <label for="credit_card">Card number</label>
+            <input type="number" id="credit_card" name="credit_card" max="16" min="16" placeholder="xxxxxxxxxxxxxxxx">
+          </div>
+          <div>
+            <label for="">CVC</label>
+            <input type="number" id="cvc" name="credit_card" max="3" min="3" placeholder="xxx">
+          </div>
+          <div>
+            <label for="expiration_date">Expiration date</label>
+            <input type="month" id="expiration_date" name="credit_card" min="2023-02" value="2023-02">
+          </div>
+      </fieldset>
+      <fieldset>
+        <label>Billing Address</label>
+        <span>
+          <label for="address">Street:</label>
+          <input type="text" id="address" name="address" pattern="[A-Za-z]+" placeholder="e.g.: Via Singapore">
+        </span>
+        <span>
+          <label for="number">Number:</label>
+          <input type="text" id="house_number" name="number" maxlength="5" size="4" pattern="[0-9]" placeholder="e.g.: 15">
+        </span>
+        <span>
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" minlength="3" pattern="[A-Za-z]+" placeholder="e.g.: Italy">
+        </span>
+      </fieldset>
+    </form>
+    <input type="submit">
+    <!--C'è qualcosa che non funziona bene nei campi di inserimento tra lettere e numeri-->
+  </body>
+</html>
